@@ -1,0 +1,66 @@
+:root {
+  /* ColorHunt palette: F4EEFF, DCD6F7, A6B1E1, 424874 */
+  --primary: #A6B1E1;           /* primary buttons */
+  --primary-hover: #8E97CF;     /* slightly deeper */
+  --primary-text: #424874;      /* readable on light primary */
+  --accent: #DCD6F7;            /* secondary accents */
+  --accent-text: #424874;
+  --surface: #FFFFFF;
+  --surface-2: #F4EEFF;         /* page background */
+  --border: #E8EDF5;
+  --muted: #667085;
+  --link: #424874;
+  --link-hover: #2F345E;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #111;
+  background-color: var(--surface-2);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: var(--link);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--link-hover);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--surface-2);
+  color: #111;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--primary);
+  color: var(--primary-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+button:hover {
+  background-color: var(--primary-hover);
+}
+button:focus,
+button:focus-visible {
+  outline: 3px solid rgba(96, 165, 250, 0.35);
+}
+
