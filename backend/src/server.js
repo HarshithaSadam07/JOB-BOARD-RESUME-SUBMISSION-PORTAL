@@ -13,11 +13,18 @@ import uploadRoutes from "./routes/upload.routes.js";
 import uploadLogoRoutes from "./routes/uploadLogo.routes.js";
 import profileRoutes from "./routes/profile.routes.js";
 
-
 dotenv.config();
 const app = express();  // ✅ app defined BEFORE app.use()
 
-app.use(cors());
+// ✅ Allow frontend (Vercel) + local dev
+app.use(cors({
+  origin: [
+    "http://localhost:5173",   // local Vite dev
+    "https://job-board-resume-submission-portal.vercel.app"  // deployed frontend
+  ],
+  credentials: true
+}));
+
 app.use(express.json());
 app.use(morgan("dev"));
 
@@ -36,7 +43,7 @@ const PORT = process.env.PORT || 5000;
 
 console.log("🔄 Server file loaded");
 
-async function seedAdminOnBoot(){
+async function seedAdminOnBoot() {
   try {
     const existing = await User.findOne({ role: 'admin' });
     if (existing) {
